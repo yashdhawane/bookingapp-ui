@@ -8,7 +8,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto py-20 text-center">
         <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold gradient-title pb-6 flex flex-col">
-          Streamline Your Workflow <br />
+          Streamline Your Booking <br />
           <span className="flex mx-auto gap-3 sm:gap-4 items-center">
             with
             {/* <Image
@@ -20,7 +20,7 @@ export default function Home() {
               /> */}
           </span>
         </h1>
-        <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto"> Empower your team with our intuitive project management solution.</p>
+        <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto"> Empower your Booking with our intuitive project management solution.</p>
         <Link href="/login">
           <button size="lg" className="m-4 bg-red-800">
             Login
