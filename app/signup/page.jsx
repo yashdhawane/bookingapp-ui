@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from 'react-hot-toast';
 
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 export default function Home() {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -25,7 +27,7 @@ export default function Home() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/signup", {
+      const response = await fetch(`${API_URL}/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

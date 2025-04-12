@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 export default function BookingPage() {
   const [numberOfTickets, setNumberOfTickets] = useState(1);
   const [bookedSeats, setBookedSeats] = useState([]);
@@ -18,7 +20,7 @@ export default function BookingPage() {
         setError('Please login to view booked seats.');
         return;
       }
-      const response = await axios.get('http://localhost:5000/api/bookings/allseats', {
+      const response = await axios.get(`${API_URL}/api/bookings/allseats`, {
         headers: {
           'Authorization': `${token}`,
           'Content-Type': 'application/json'
@@ -62,7 +64,7 @@ export default function BookingPage() {
         return;
       }
 
-      const response = await axios.post('http://localhost:5000/api/bookings/book', {
+      const response = await axios.post(`${API_URL}/api/bookings/book`, {
         numberOfSeats: numberOfTickets
       }, {
         headers: {
